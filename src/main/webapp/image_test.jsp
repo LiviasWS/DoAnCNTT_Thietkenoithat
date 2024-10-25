@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<image src="${pageContext.request.contextPath}/image/collection-image--office.avif">
-	abc
+
 </body>
 </html>

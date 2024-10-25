@@ -1,7 +1,9 @@
 package com.control;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.CollectionDAO;
+import com.dao.ProductDAO;
 import com.model.Collection;
+import com.model.Product;
 
 /**
  * Servlet implementation class MainMenuServlet
@@ -19,12 +23,17 @@ import com.model.Collection;
 @WebServlet("/MainMenuServlet")
 public class MainMenuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	CollectionDAO collectionDAO;
+	ProductDAO productDAO;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MainMenuServlet() {
+    public MainMenuServlet() 
+    {
         super();
+        this.collectionDAO= new CollectionDAO();
+        this.productDAO= new ProductDAO();
         // TODO Auto-generated constructor stub
     }
 
@@ -34,7 +43,11 @@ public class MainMenuServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		showAllCollections(request, response);
+		String address="main-menu.jsp";
+		Map <Collection, List<Product>> collectionBestSellerMap= GetBestSellerByCollection();
+		request.setAttribute("collectionBestSellerMap", collectionBestSellerMap);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+        dispatcher.forward(request, response);
 	}
 
 	/**
@@ -45,14 +58,16 @@ public class MainMenuServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private void showAllCollections(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+	private Map<Collection, List<Product>> GetBestSellerByCollection() throws ServletException, IOException
 	{
-		String address="main-menu.jsp";
-		CollectionDAO collectionDAO= new CollectionDAO();
+		Map <Collection, List<Product>> collectionBestSellerMap= new HashMap<>();
 		List<Collection> collections= collectionDAO.getAllCollections();
-		request.setAttribute("collections", collections);
-		RequestDispatcher dispatcher = request.getRequestDispatcher(address);
-        dispatcher.forward(request, response);
+		for(Collection collection : collections)
+		{
+			List<Product> bestSellers = productDAO.GetTop4BestSeller(collection.getId());
+			collectionBestSellerMap.put(collection, bestSellers);
+		}
+		return collectionBestSellerMap;
 	}
-
+	
 }
