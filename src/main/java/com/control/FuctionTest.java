@@ -19,20 +19,16 @@ public class FuctionTest
 	{
 		// TODO Auto-generated method stub
 		try {
-			Map<Collection, List<Product>> map = GetBestSellerByCollection();
-			for(Collection collection : map.keySet())
+			CollectionDAO collectionDAO= new CollectionDAO();
+			Collection collection = collectionDAO.GetCollectionByID(1);
 			{
-				System.out.println("Collection: "+ collection.getName());
-				for(Product bestSeller : map.get(collection))
 				{
-					System.out.println("Best Seller: "+ bestSeller.getName());
+					System.out.println("ID: "+ collection.getId());
+					System.out.println("Name: "+ collection.getName());
 				}
 			}
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		}catch(Exception e)
+		{
 			e.printStackTrace();
 		}
 	}
