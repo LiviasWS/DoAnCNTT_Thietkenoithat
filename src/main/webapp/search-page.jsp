@@ -51,110 +51,42 @@
             <div class="filter__container">
                 <p class="filter__header">Color</p>
                 <div class="filter__item__container filter__item__container--color">
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box filter__item__color__box--white"></div>
-                        <p class="filter__item__color__title">Whites (12)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box filter__item__color__box--blue"></div>
-                        <p class="filter__item__color__title">Blues (9)</p>
-                    </div>
-                    <div class="filter__item__color ">
-                        <div class="filter__item__color__box filter__item__color__box--gray"></div>
-                        <p class="filter__item__color__title">Grays (16)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box filter__item__color__box--brown"></div>
-                        <p class="filter__item__color__title">Browns (6)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box filter__item__color__box--red"></div>
-                        <p class="filter__item__color__title">Reds (5)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box filter__item__color__box--gold"></div>
-                        <p class="filter__item__color__title">Golds (10)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box  filter__item__color__box--ivory"></div>
-                        <p class="filter__item__color__title">Ivories (11)</p>
-                    </div>
-                    <div class="filter__item__color">
-                        <div class="filter__item__color__box  filter__item__color__box--green"></div>
-                        <p class="filter__item__color__title">Greens (14)</p>
-                    </div>
+	                <c:forEach var="color" items="${colors}">
+	                    <div class="filter__item__color">
+	                        <div class="filter__item__color__box" style="background-image: url('${pageContext.request.contextPath}${color.image}');"></div>
+	                        <p class="filter__item__color__title">${color.name}</p>
+	                    </div>
+	                </c:forEach>
                 </div>
                 <div class="space__line"></div>
-                <p class="filter__header">Categorities</p>
+                <p class="filter__header">Categories</p>
                 <div class="filter__item__container filter__item__container--common">
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_category_desk" name="cb_category_desk" value="Desk">
-                        <label for="cb_category_desk">Desk (12)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_category_chair" name="cb_category_chair" value="Chair">
-                        <label for="cb_category_chair">Chair (11)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_category_storage" name="cb_category_storage" value="Storage">
-                        <label for="cb_category_storage">Storage (9)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_category_rug" name="cb_category_rug" value="Rug">
-                        <label for="cb_category_rug">Rug (16)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_category_drinkware" name="cb_category_drinkware" value="Dinkware">
-                        <label for="cb_category_drinkware">Drinkware (12)</label><br>
-                    </div>
+	                <c:forEach var="category" items="${categories}">
+	                    <div class="filter__item__common">
+	                        <input type="checkbox" name="cbCategoryValue" value="${category.id }">
+	                        <label>${category.name}</label><br>
+	                    </div>
+	                </c:forEach>
                 </div>
                 <div class="space__line"></div>
                 <p class="filter__header">Collections</p>
                 <div class="filter__item__container filter__item__container--common">
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb_collection_office" name="checkbox_1" value="Desk">
-                        <label for="checkbox_1">Desk (12)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="checkbox_2" name="checkbox_2" value="Chair">
-                        <label for="checkbox_2">Chair (11)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="checkbox_3" name="checkbox_3" value="Storage">
-                        <label for="checkbox_3">Storage (9)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="checkbox_4" name="checkbox_4" value="Rug">
-                        <label for="checkbox_4">Rug (16)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="checkbox_5" name="checkbox_5" value="Dinkware">
-                        <label for="checkbox_5">Drinkware (12)</label><br>
-                    </div>
+	                <c:forEach var="collection" items="${collections }">
+	                    <div class="filter__item__common">
+	                        <input type="checkbox" name="cbCollectionValue" value="${collection.id }">
+	                        <label>${collection.name}</label><br>
+	                    </div>
+	                </c:forEach>
                 </div>
                 <div class="space__line"></div>
-                <p class="filter__header">Meterial</p>
+                <p class="filter__header">Material</p>
                 <div class="filter__item__container filter__item__container--common">
+                <c:forEach var="material" items="${materials}">
                     <div class="filter__item__common">
-                        <input type="checkbox" id="cb__meterial__wood" name="cb__meterial__wood" value="Wood">
-                        <label for="cb__meterial__wood">Wood (10)</label><br>
+                        <input type="checkbox" name="cbMaterialValue" value="${material.id }">
+                        <label>${material.name}</label><br>
                     </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb__meterial__metal" name="cb__meterial__metal" value="Metal">
-                        <label for="cb__meterial__metal">Metal (14)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb__meterial__mix__meterial" name="cb__meterial__mix__meterial" value="Mix Meterial">
-                        <label for="cb__meterial__mix__meterial">Mix Meterial (9)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb__meterial__natural__weave" name="cb__meterial__natural__weave" value="Natual Weave">
-                        <label for="cb__meterial__natural__weave">Natual Weave (16)</label><br>
-                    </div>
-                    <div class="filter__item__common">
-                        <input type="checkbox" id="cb__meterial__leather" name="cb__meterial__leather" value="Leather">
-                        <label for="cb__meterial__leather">Leather (4)</label><br>
-                    </div>
+                </c:forEach>
                 </div>
             </div>
             <div class="list__container">

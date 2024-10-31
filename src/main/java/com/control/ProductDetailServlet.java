@@ -7,12 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.ProductDAO;
+
 /**
  * Servlet implementation class ProductDetailServlet
  */
 @WebServlet("/ProductDetailServlet")
 public class ProductDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	ProductDAO productDAO= new ProductDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -41,7 +45,6 @@ public class ProductDetailServlet extends HttpServlet {
 	private void ShowProduct (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		int id = Integer.parseInt(request.getParameter("product"));
-		
 	}
 
 }

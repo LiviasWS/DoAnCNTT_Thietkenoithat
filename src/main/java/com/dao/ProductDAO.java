@@ -19,6 +19,7 @@ public class ProductDAO
 		connection = DBUtil.getConnection();
 	}
 	
+	
 	public List<Product> GetProductBySearching(String searchString)
 	{
 		String sqlString= "CALL SEARCH_PRODUCT('"+ searchString +"');";

@@ -8,8 +8,10 @@ import java.util.Map;
 import javax.servlet.ServletException;
 
 import com.dao.CollectionDAO;
+import com.dao.ColorDAO;
 import com.dao.ProductDAO;
 import com.model.Collection;
+import com.model.Color;
 import com.model.Product;
 
 public class FuctionTest 
@@ -19,13 +21,13 @@ public class FuctionTest
 	{
 		// TODO Auto-generated method stub
 		try {
-			CollectionDAO collectionDAO= new CollectionDAO();
-			Collection collection = collectionDAO.GetCollectionByID(1);
+			ColorDAO colorDAO = new ColorDAO();
+			List<Color> colors = colorDAO.GetAllColor();
+			for(Color color : colors)
 			{
-				{
-					System.out.println("ID: "+ collection.getId());
-					System.out.println("Name: "+ collection.getName());
-				}
+				System.out.println("ID: "+ color.getId());
+				System.out.println("Name: "+ color.getName());
+				System.out.println("Image: "+color.getImage());
 			}
 		}catch(Exception e)
 		{

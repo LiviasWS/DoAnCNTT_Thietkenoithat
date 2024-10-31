@@ -11,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.CategoryDAO;
 import com.dao.CollectionDAO;
+import com.dao.ColorDAO;
+import com.dao.MaterialDAO;
 import com.dao.ProductDAO;
 import com.model.Collection;
 import com.model.Product;
@@ -29,6 +32,9 @@ public class ProductServlet extends HttpServlet {
 	
 	ProductDAO productDAO = new ProductDAO();
 	CollectionDAO collectionDAO = new CollectionDAO(); 
+	ColorDAO colorDAO = new ColorDAO();
+	MaterialDAO materialDAO = new MaterialDAO();
+	CategoryDAO categoryDAO = new CategoryDAO();
 	
     public ProductServlet() {
         super();
@@ -43,6 +49,10 @@ public class ProductServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		String action= (String) request.getParameter("action");
+		request.setAttribute("colors", colorDAO.GetAllColor());
+		request.setAttribute("collections", collectionDAO.getAllCollections());
+		request.setAttribute("materials", materialDAO.GetAllMeterial());
+		request.setAttribute("categories", categoryDAO.GetAllCategory());
 		switch(action)
 		{
 			case "ListProductByCollection":
@@ -103,5 +113,6 @@ public class ProductServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
+	
 
 }
