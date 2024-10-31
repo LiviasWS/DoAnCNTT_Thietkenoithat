@@ -8,8 +8,10 @@ import java.util.Map;
 import javax.servlet.ServletException;
 
 import com.dao.CollectionDAO;
+import com.dao.ColorDAO;
 import com.dao.ProductDAO;
 import com.model.Collection;
+import com.model.Color;
 import com.model.Product;
 
 public class FuctionTest 
@@ -19,20 +21,16 @@ public class FuctionTest
 	{
 		// TODO Auto-generated method stub
 		try {
-			Map<Collection, List<Product>> map = GetBestSellerByCollection();
-			for(Collection collection : map.keySet())
+			ColorDAO colorDAO = new ColorDAO();
+			List<Color> colors = colorDAO.GetAllColor();
+			for(Color color : colors)
 			{
-				System.out.println("Collection: "+ collection.getName());
-				for(Product bestSeller : map.get(collection))
-				{
-					System.out.println("Best Seller: "+ bestSeller.getName());
-				}
+				System.out.println("ID: "+ color.getId());
+				System.out.println("Name: "+ color.getName());
+				System.out.println("Image: "+color.getImage());
 			}
-		} catch (ServletException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
+		}catch(Exception e)
+		{
 			e.printStackTrace();
 		}
 	}

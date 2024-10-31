@@ -51,7 +51,7 @@
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
+						<li><a class="nav-link" href="${pageContext.request.contextPath}/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/cart.jsp"><img src="${pageContext.request.contextPath}/images/cart.svg"></a></li>
 					</ul>
 				</div>

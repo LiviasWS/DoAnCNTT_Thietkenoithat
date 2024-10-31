@@ -4,7 +4,7 @@
   <artifactId>DoAnCNTT_Thietkenoithat</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-   <dependencies>
+  <dependencies>
   	<dependency>
     	<groupId>mysql</groupId>
     	<artifactId>mysql-connector-java</artifactId>
@@ -28,7 +28,6 @@
     	<scope>provided</scope>
 	</dependency>
   	</dependencies>
-
   <build>
     <plugins>
       <plugin>

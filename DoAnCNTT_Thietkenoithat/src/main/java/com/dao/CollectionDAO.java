@@ -18,6 +18,30 @@ public class CollectionDAO
 		connection = DBUtil.getConnection();
 	}
 	
+	public Collection GetCollectionByID(int id)
+	{
+		Collection collection = new Collection();
+		String sqlString = "CALL GET_COLLECTION_BY_ID("+ id +");";
+		try
+		{
+			Statement stmt = connection.createStatement();
+			ResultSet rs =stmt.executeQuery(sqlString);
+			while(rs.next())
+			{
+				collection.setId(rs.getInt("id"));
+				collection.setName(rs.getString("name"));
+				collection.setTitle(rs.getString("title"));
+				collection.setDescription(rs.getString("description"));
+				collection.setImage(rs.getString("image"));
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return collection;
+	}
+	
 	public List<Collection> getAllCollections() 
 	{
 		 List<Collection> collections = new ArrayList<>();
