@@ -1,0 +1,29 @@
+.btn-add-to-cart{
+	background-color: #f0f0f0;
+    border: none;
+    color: #e91e63; /* Pink color */
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 15px;
+    border: 1px solid #D2B48C;
+}
+.btn-add-to-cart:hover{
+	background-color: #e91e63;
+    color: #fff;
+}
+.img-remove{
+	width: 30px;
+    height: 30px;
+}
+.custom-navbar {
+        background-color: #808080 !important; 
+}
+.hero {
+        background-color: #808080; 
+}
+.btn-unlike{
+	width: 50px;
+    height: 50px;
+}
