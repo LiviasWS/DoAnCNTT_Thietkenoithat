@@ -1,12 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!-- /*
-* Bootstrap 5
-* Template Name: Furni
-* Template Author: Untree.co
-* Template URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,9 +16,8 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/css/tiny-slider.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-				<link href="${pageContext.request.contextPath}/css/style2.css" rel="stylesheet">
-		
-		<title>Contact </title>
+		<link href="${pageContext.request.contextPath}/css/style2.css" rel="stylesheet">
+		<title>INFO</title>
 	</head>
 
 	<body>
@@ -42,7 +34,7 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
+						<li class="nav-item ">
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/shop.jsp">Shop</a></li>
@@ -68,115 +60,116 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Contact</h1>
-								<p class="mb-4">Hãy liên hệ chúng tôi để nhận thông tin cụ thể về sản phẩm và đơn hàng của quý khách. Hân hạnh được phục vụ !</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<h1>Information</h1>
+								
 							</div>
 						</div>
-						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="${pageContext.request.contextPath}/images/couch.png" class="img-fluid">
-							</div>
+
 						</div>
 					</div>
 				</div>
-			</div>
+
 		<!-- End Hero Section -->
 
 		
-		<!-- Start Contact Form -->
-		<div class="untree_co-section">
-      <div class="container">
 
-        <div class="block">
-          <div class="row justify-content-center">
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				<div class="row justify-content-between align-items-center">
+					<div class="col-lg-6">
+						<h2 class="section-title2">Xin chào, ${account.username}</h2>
+						
+					
+					
+					
+						<div class="row my-5">
+							<div class="col-6 col-md-6">
+								<div class="feature">
 
+									<div class="form-group row">
+    									<div class="col-md-12">
+        									<label for="c_fname" class="text-black">Họ và tên <span class="text-danger">*</span></label>
+        									<input type="text" class="form-control" id="username" name="username" value="${account.username}" required>
+    									</div>
+									</div>
 
-            <div class="col-md-8 col-lg-8 pb-4">
+								</div>
+							</div>
 
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<label for="c_sex" class="text-black">Giới tính <span class="text-danger">*</span></label>
+		              			<select id="gender" name="gender" class="form-control" style="width: 80%;" required>
+        							<option value="" ${account.gender == "" ? "selected" : ""}>Chọn giới tính</option>
+        							<option value="Male" ${account.gender == "Male" ? "selected" : ""}>Male</option>
+        							<option value="Female" ${account.gender == "Female" ? "selected" : ""}>Female</option>
+    							</select>
 
-              <div class="row mb-5">
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>1 Võ Văn Ngân, Linh Trung, TP.Thủ Đức</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
+								</div>
+							</div>
+							
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="col-md-12">
+		                				<label for="c_bday" class="text-black">Ngày tháng năm sinh </label>
+		                				<input type="text" class="form-control" id="birthday" name="birthday" style="width: 80%;" value="${account.birthday}">
 
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>harmonihome@gmail.com</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
-
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>+84 94 3925 393</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
-              </div>
-
-              <form>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="fname">Họ tên</label>
-                      <input type="text" class="form-control" id="fname">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="lname">Phone</label>
-                      <input type="text" class="form-control" id="lname">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="text-black" for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
-                </div>
-
-                <div class="form-group mb-5">
-                  <label class="text-black" for="message">Tin nhắn</label>
-                  <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
-              </form>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
+		              				</div>
+								</div>
+							</div>
+							
+							
 
 
-    </div>
-  </div>
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="col-md-12">
+		                				<label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
+		                				<input type="text" class="form-control" id="phone" name="phone" value="${account.phone}" required>
+		              				</div>
+								</div>
+							</div>
+							
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="col-md-12">
+		                				<label for="c_email_address" class="text-black">Email<span class="text-danger">*</span></label>
+		                				<input type="text" class="form-control" id="email" name="email" value="${account.email}" required>
+		              				</div>
+								</div>
+							</div>
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<div class="col-md-12">
+		                				<label for="c_address" class="text-black">Địa chỉ <span class="text-danger">*</span></label>
+		                				<input type="text" class="form-control" id="address" name="address" value="${account.address}" required>
+		              				</div>
+								</div>
+							</div>
+							
+							
+							<div class="col-6 col-md-6">
+								<div class="feature">
+									<button class="btn-update" id="button-update" onclick="window.location='InfoServlet?action=edit'">Update</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
-  <!-- End Contact Form -->
+					<div class="col-lg-5">
+    					<div class="img-wrap">
+        					<img src="${pageContext.request.contextPath}/images/${account.image}" alt="Image" class="img-ava">
+    					</div>
+    					<button class="btn-change" type="button" id="button-change">Change</button>
+    					<input type="file" id="file-input" style="display: none;" accept="image/*">
+					</div>
+					</div>
+				</div>
+			</div>
+
+		
+		<!-- End Why Choose Us Section -->
 
 		
 
@@ -284,8 +277,35 @@
 			</div>
 		</footer>
 		<!-- End Footer Section -->	
+		
+		<!-- Open File Explorer-->	
+		<script>
+    		document.getElementById("button-change").addEventListener("click", function() {
+        		document.getElementById("file-input").click();
+    		});
 
+    		document.getElementById("file-input").addEventListener("change", function(event) {
+        		const file = event.target.files[0];
+        		if (file) {
+            		const reader = new FileReader();
+            		reader.onload = function(e) {
+                		document.querySelector(".img-ava").src = e.target.result;
+            		};
+            		reader.readAsDataURL(file);
+        		}
+    		});
+    		
+    		<c:if test="${not empty success}">
+    	    <c:if test="${success}">
+    	        <p style="color: green;">Cập nhật thành công!</p>
+    	    </c:if>
+    	    <c:if test="${!success}">
+    	        <p style="color: red;">Cập nhật thất bại!</p>
+    	    </c:if>
+    	</c:if>
 
+		</script>
+		
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>

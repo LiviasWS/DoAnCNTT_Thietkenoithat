@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -41,18 +42,16 @@
         <hr>
         <div class="content__container">
             <div class="sub__image__container">
-                <div class="sub__image__item sub__image__item--image1"></div>
-                <div class="sub__image__item sub__image__item--image2"></div>
-                <div class="sub__image__item sub__image__item--image3"></div>
-                <div class="sub__image__item sub__image__item--image4"></div>
-                <div class="sub__image__item sub__image__item--image5"></div>
+                <c:forEach var= "subImage" items = "${subImages}">
+                	<div class="sub__image__item" style= "background-image = url('${pageContext.request.contextPath}${subImage.image}')"></div>
+                </c:forEach>
             </div>
             <div class="image__container">
                 
             </div>
             <div class="infor__container">
-                <p class="infor__name">Mid-Century Swivel Office Chair - Metal Legs</p>
-                <p class="infor__price">$319.20 - $599</p>
+                <p class="infor__name">${product.name}</p>
+                <p class="infor__price">$${product.price}</p>
                 <div class="infor__fabric">
                     <div class="infor__fabric__type__container">
                         <div class="infor__fabric__type__name">In-Stock Fabrics</div>

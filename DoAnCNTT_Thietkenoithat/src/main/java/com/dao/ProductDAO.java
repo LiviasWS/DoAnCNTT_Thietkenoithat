@@ -19,6 +19,32 @@ public class ProductDAO
 		connection = DBUtil.getConnection();
 	}
 	
+	public Product getProductByID(int id)
+	{
+		String sqlString = "SELECT * FROM PRODUCT WHERE ID = " + id + ";";
+		Product product = new Product();
+		try
+		{
+			Statement stmt = connection.createStatement();
+			ResultSet rs = stmt.executeQuery(sqlString);
+			while(rs.next())
+			{
+				product.setId(rs.getInt("id"));
+				product.setName(rs.getString("name"));
+				product.setPrice(rs.getString("price"));
+				product.setCategory(rs.getString("category"));
+				product.setCollection(rs.getString("collection"));
+				product.setImage(rs.getString("image"));
+				product.setQuantity(rs.getInt("quantity"));
+				product.setSold(rs.getInt("sold"));	
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return product;
+	}
 	
 	public List<Product> GetProductBySearching(String searchString)
 	{

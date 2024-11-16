@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!-- /*
 * Bootstrap 5
 * Template Name: Furni
@@ -23,9 +22,9 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/css/tiny-slider.css" rel="stylesheet">
 		<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet">
-				<link href="${pageContext.request.contextPath}/css/style2.css" rel="stylesheet">
+		<link href="${pageContext.request.contextPath}/css/style2.css" rel="stylesheet">
 		
-		<title>Contact </title>
+		<title>Coupon</title>
 	</head>
 
 	<body>
@@ -42,7 +41,7 @@
 
 				<div class="collapse navbar-collapse" id="navbarsFurni">
 					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
+						<li class="nav-item ">
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/shop.jsp">Shop</a></li>
@@ -68,15 +67,11 @@
 					<div class="row justify-content-between">
 						<div class="col-lg-5">
 							<div class="intro-excerpt">
-								<h1>Contact</h1>
-								<p class="mb-4">Hãy liên hệ chúng tôi để nhận thông tin cụ thể về sản phẩm và đơn hàng của quý khách. Hân hạnh được phục vụ !</p>
-								<p><a href="" class="btn btn-secondary me-2">Shop Now</a><a href="#" class="btn btn-white-outline">Explore</a></p>
+								<h1>Coupon</h1>
 							</div>
 						</div>
 						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="${pageContext.request.contextPath}/images/couch.png" class="img-fluid">
-							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -84,100 +79,124 @@
 		<!-- End Hero Section -->
 
 		
-		<!-- Start Contact Form -->
-		<div class="untree_co-section">
-      <div class="container">
 
-        <div class="block">
-          <div class="row justify-content-center">
+		<!-- Start Why Choose Us Section -->
+		<div class="why-choose-section">
+			<div class="container">
+				
+				
+				<div class="row my-5">
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<div class="feature">
+							<div class="icon">
+								<img src="${pageContext.request.contextPath}/images/truck.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Fast &amp; Free Shipping</h3>
+							<p>Giao hàng siêu tốc, tận hưởng ngay hôm nay!</p>
+						</div>
+					</div>
 
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<div class="feature">
+							<div class="icon">
+								<img src="${pageContext.request.contextPath}/images/bag.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Easy to Shop</h3>
+							<p>Mua sắm dễ dàng, chỉ với vài cú click!</p>
+						</div>
+					</div>
 
-            <div class="col-md-8 col-lg-8 pb-4">
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<div class="feature">
+							<div class="icon">
+								<img src="${pageContext.request.contextPath}/images/support.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>24/7 Support</h3>
+							<p>Hỗ trợ 24/7, sẵn sàng phục vụ bạn!</p>
+						</div>
+					</div>
 
+					<div class="col-6 col-md-6 col-lg-3 mb-4">
+						<div class="feature">
+							<div class="icon">
+								<img src="${pageContext.request.contextPath}/images/return.svg" alt="Image" class="imf-fluid">
+							</div>
+							<h3>Hassle Free Returns</h3>
+							<p>Đổi trả dễ dàng, không lo lắng!</p>
+						</div>
+					</div>
 
-              <div class="row mb-5">
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                        <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>1 Võ Văn Ngân, Linh Trung, TP.Thủ Đức</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
+					
 
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>harmonihome@gmail.com</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
+				</div>
+			
+			</div>
+		</div>
+		<!-- End Why Choose Us Section -->
 
-                <div class="col-lg-4">
-                  <div  class="service no-shadow align-items-center link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
-                    <div class="service-icon color-1 mb-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-                      </svg>
-                    </div> <!-- /.icon -->
-                    <div class="service-contents">
-                      <p>+84 94 3925 393</p>
-                    </div> <!-- /.service-contents-->
-                  </div> <!-- /.service -->
-                </div>
-              </div>
+		<!-- Start Product Section -->
+		<div class="product-section pt-0">
+			<div class="container">
+				<div class="row">
 
-              <form>
-                <div class="row">
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="fname">Họ tên</label>
-                      <input type="text" class="form-control" id="fname">
-                    </div>
-                  </div>
-                  <div class="col-6">
-                    <div class="form-group">
-                      <label class="text-black" for="lname">Phone</label>
-                      <input type="text" class="form-control" id="lname">
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="text-black" for="email">Email</label>
-                  <input type="email" class="form-control" id="email">
-                </div>
+					<!-- Start Column 1 -->
+					<div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+						<h2 class="mb-4 section-title">Tận hưởng ưu đãi tuyệt vời.</h2>
+						<p class="mb-4">Sở hữu ngay các voucher đặc biệt và tận hưởng ưu đãi hấp dẫn ngay hôm nay.</p>
+						<p><img src="${pageContext.request.contextPath}/images/right-arrow.png"></p>
+					</div> 
+					<!-- End Column 1 -->
 
-                <div class="form-group mb-5">
-                  <label class="text-black" for="message">Tin nhắn</label>
-                  <textarea name="" class="form-control" id="message" cols="30" rows="5"></textarea>
-                </div>
+					<!-- Start Column 2 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="${pageContext.request.contextPath}/jsp/v-ship.jsp">
+							<img src="${pageContext.request.contextPath}/images/delivery-truck.png" class="img-voucher">
+							<h3 class="product-title">Voucher vận chuyển</h3>
+							<strong class="product-price">$50.00</strong>
 
-                <button type="submit" class="btn btn-primary-hover-outline">Send Message</button>
-              </form>
+							<span class="icon-cross">
+								<img src="${pageContext.request.contextPath}/images/magnifying-glass.png" class="img-fluids">
+							</span>
+						</a>
+					</div> 
+					<!-- End Column 2 -->
 
-            </div>
+					<!-- Start Column 3 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="${pageContext.request.contextPath}/jsp/v-product.jsp">
+							<img src="${pageContext.request.contextPath}/images/cosmetic.png" class="img-voucher">
+							<h3 class="product-title">Voucher toàn ngành</h3>
+							<strong class="product-price">$78.00</strong>
 
-          </div>
+							<span class="icon-cross">
+								<img src="${pageContext.request.contextPath}/images/magnifying-glass.png" class="img-fluids">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 3 -->
 
-        </div>
+					<!-- Start Column 4 -->
+					<div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+						<a class="product-item" href="#">
+							<img src="${pageContext.request.contextPath}/images/promo.png" class="img-voucher">
+							<h3 class="product-title">Voucher khác</h3>
+							<strong class="product-price">$43.00</strong>
 
-      </div>
+							<span class="icon-cross">
+								<img src="${pageContext.request.contextPath}/images/magnifying-glass.png" class="img-fluids">
+							</span>
+						</a>
+					</div>
+					<!-- End Column 4 -->
 
+				</div>
+			</div>
+		</div>
+		<!-- End Product Section -->
 
-    </div>
-  </div>
+		
 
-  <!-- End Contact Form -->
-
+		
 		
 
 		<!-- Start Footer Section -->

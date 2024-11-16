@@ -1,5 +1,7 @@
 package com.model;
 
+import java.util.List;
+
 public class Product 
 {
 	int id;
@@ -10,7 +12,9 @@ public class Product
 	String image;
 	int quantity;
 	int sold;
+	
 	public Product() {}
+	
 	public int getId() {
 		return id;
 	}

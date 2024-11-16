@@ -46,14 +46,14 @@
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/shop.jsp">Shop</a></li>
-						<li><a class="nav-link" href="about.html">Coupon</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
+						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/voucher.jsp">Coupon</a></li>
+						<li><a class="nav-link" href="services.html">History</a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/favo.jsp">Favorite</a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/contact.jsp">Contact us</a></li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="${pageContext.request.contextPath}/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
+						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/cart.jsp"><img src="${pageContext.request.contextPath}/images/cart.svg"></a></li>
 					</ul>
 				</div>
@@ -104,7 +104,7 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="${pageContext.request.contextPath}/images/sofa.png" alt="Image" class="img-fluid">
+					<img src="${pageContext.request.contextPath}/images/product-2.png" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">

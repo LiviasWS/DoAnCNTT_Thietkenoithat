@@ -46,14 +46,14 @@
 							<a class="nav-link" href="index.html">Home</a>
 						</li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/shop.jsp">Shop</a></li>
-						<li><a class="nav-link" href="about.html">Coupon</a></li>
-						<li><a class="nav-link" href="services.html">Services</a></li>
+						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/voucher.jsp">Coupon</a></li>
+						<li><a class="nav-link" href="services.html">History</a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/favo.jsp">Favorite</a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/contact.jsp">Contact us</a></li>
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="${pageContext.request.contextPath}/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
+						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/info.jsp"><img src="${pageContext.request.contextPath}/images/user.svg"></a></li>
 						<li><a class="nav-link" href="${pageContext.request.contextPath}/jsp/cart.jsp"><img src="${pageContext.request.contextPath}/images/cart.svg"></a></li>
 					</ul>
 				</div>
@@ -86,47 +86,38 @@
 		        <div class="col-md-6 mb-5 mb-md-0">
 		          <h2 class="h3 mb-3 text-black">Thông tin chi tiết</h2>
 		          <div class="p-3 p-lg-5 border bg-white">
-		            <div class="form-group">
-		              <label for="c_country" class="text-black">Thành phố <span class="text-danger">*</span></label>
-		              <select id="c_country" class="form-control">
-		                		<option value="1">Chọn 1 thành phố</option>    
-		                		<option value="2">Hồ Chí Minh</option>    
-		                		<option value="3">Hà Nội</option>    
-		                		<option value="4">Hải Phòng</option>    
-		                		<option value="5">Đà Nẵng</option>    
-		                		<option value="6">Huế</option>    
-		                		<option value="7">Cần Thơ</option>    
-		                		<option value="8">Nghệ An</option>    
-		                		<option value="9">Khác...</option>  
-		              </select>
+		          
+		          <div class="form-group row">
+		              <div class="col-md-6">
+		                <label for="c_fname" class="text-black">Họ và tên <span class="text-danger">*</span></label>
+        				<input type="text" class="form-control" id="username" name="username" value="${account.username}" style="width: 170%;" readonly>
+		              </div>
+
 		            </div>
-		            <div class="form-group row">
-		              <div class="col-md-6">
-		                <label for="c_fname" class="text-black">Họ và tên đệm <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_fname" name="c_fname" placeholder="Nguyễn Văn">
-		              </div>
-		              <div class="col-md-6">
-		                <label for="c_lname" class="text-black">Tên<span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_lname" name="c_lname" placeholder="A">
-		              </div>
+		          
+		          
+		          
+		            <div class="form-group">
+		              <label for="c_sex" class="text-black">Giới tính <span class="text-danger">*</span></label>
+		              			<select id="gender" name="gender" class="form-control" style="width: 80%;" readonly>
+        							<option value="" ${account.gender == "" ? "selected" : ""}>Chọn giới tính</option>
+        							<option value="Male" ${account.gender == "Male" ? "selected" : ""}>Male</option>
+        							<option value="Female" ${account.gender == "Female" ? "selected" : ""}>Female</option>
+    							</select>
 		            </div>
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
-		                <label for="c_companyname" class="text-black">Ngày tháng năm sinh </label>
-		                <input type="text" class="form-control" id="c_companyname" name="c_companyname" placeholder="VD: XX/YY/ZZ">
+		                <label for="c_bday" class="text-black">Ngày tháng năm sinh </label>
+		                <input type="text" class="form-control" id="birthday" name="birthday" style="width: 80%;" value="${account.birthday}" readonly>
 		              </div>
 		            </div>
 
 		            <div class="form-group row">
 		              <div class="col-md-12">
 		                <label for="c_address" class="text-black">Địa chỉ <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_address" name="c_address" placeholder="Số nhà, tên đường">
+		                <input type="text" class="form-control" id="address" name="address" value="${account.address}" style="width: 80%;" readonly>
 		              </div>
-		            </div>
-
-		            <div class="form-group mt-3">
-		              <input type="text" class="form-control" placeholder="Địa chỉ cụ thể VD: Tòa A, chung cư ABC...">
 		            </div>
 
 		             <!-- /*<div class="form-group row">
@@ -143,11 +134,11 @@
 		            <div class="form-group row mb-5">
 		              <div class="col-md-6">
 		                <label for="c_email_address" class="text-black">Email<span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_email_address" name="c_email_address" placeholder="info@gmail.com">
+		                <input type="text" class="form-control" id="email" name="email" value="${account.email}" readonly>
 		              </div>
 		              <div class="col-md-6">
 		                <label for="c_phone" class="text-black">Phone <span class="text-danger">*</span></label>
-		                <input type="text" class="form-control" id="c_phone" name="c_phone" placeholder="Nhập số điện thoại">
+		                				<input type="text" class="form-control" id="phone" name="phone" value="${account.phone}" readonly>
 		              </div>
 		            </div>
 
@@ -263,7 +254,7 @@
 		                    <button class="btn btn-black btn-sm" type="button" id="button-addon2">Apply</button>
 		                  </div>
 		                </div>
-
+						<div id="coupon-feedback" class="mt-2 text-danger" style="display: none;">Mã giảm giá đã được áp dụng</div>
 		              </div>
 		            </div>
 		          </div>
@@ -291,8 +282,13 @@
 		                      <td class="text-black">$350.00</td>
 		                    </tr>
 		                    <tr>
-		                      <td class="text-black font-weight-bold"><strong>Tổng giá trị đơn hàng</strong></td>
-		                      <td class="text-black font-weight-bold"><strong>$350.00</strong></td>
+  								<td class="text-black font-weight-bold"><strong>Giá trị được khấu trừ</strong></td>
+  								<td class="text-black strike-orange">$0.00</td>
+							</tr>
+
+		                    <tr>
+		                      <td class="text-black font-weight-bold"><strong>Tổng giá trị giỏ hàng</strong></td>
+		                      <td class="text-black font-weight-bold"><strong>$0.00</strong></td>
 		                    </tr>
 		                  </tbody>
 		                </table>
@@ -346,7 +342,7 @@
 			<div class="container relative">
 
 				<div class="sofa-img">
-					<img src="${pageContext.request.contextPath}/images/sofa.png" alt="Image" class="img-fluid">
+					<img src="${pageContext.request.contextPath}/images/product-2.png" alt="Image" class="img-fluid">
 				</div>
 
 				<div class="row">
@@ -446,6 +442,18 @@
 		</footer>
 		<!-- End Footer Section -->	
 
+		<script>
+  document.getElementById('button-addon2').addEventListener('click', function() {
+    const feedback = document.getElementById('coupon-feedback');
+    feedback.style.display = 'block'; 
+  });
+</script>
+
+<script>
+document.getElementById('c_code').addEventListener('input', function() {
+	  document.getElementById('coupon-feedback').style.display = 'none';
+	});
+</script>
 
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
