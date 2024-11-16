@@ -113,6 +113,5 @@ public class ProductServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	
 
 }

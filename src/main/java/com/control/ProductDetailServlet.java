@@ -1,6 +1,9 @@
 package com.control;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.dao.ProductDAO;
+import com.dao.SubImageDAO;
+import com.model.Product;
+import com.model.SubImage;
 
 /**
  * Servlet implementation class ProductDetailServlet
@@ -17,6 +23,7 @@ public class ProductDetailServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	ProductDAO productDAO= new ProductDAO();
+	SubImageDAO subImageDAO = new SubImageDAO();
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -44,7 +51,14 @@ public class ProductDetailServlet extends HttpServlet {
 	
 	private void ShowProduct (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
+		String address = "product-detail.jsp";
 		int id = Integer.parseInt(request.getParameter("product"));
+		List<SubImage> subImages = subImageDAO.getSubImage(id);
+		Product product = productDAO.getProductByID(id);
+		request.setAttribute("subImages", subImages);
+		request.setAttribute("product", product);
+		RequestDispatcher dispatcher = request.getRequestDispatcher(address);
+		dispatcher.forward(request, response);
 	}
 
 }
